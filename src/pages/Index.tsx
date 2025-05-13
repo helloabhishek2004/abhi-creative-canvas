@@ -6,6 +6,7 @@ import FlowerIcon from "@/components/FlowerIcon";
 import TypingEffect from "@/components/TypingEffect";
 import AboutMeModal from "@/components/AboutMeModal";
 import ProjectCarousel from "@/components/ProjectCarousel";
+import ToolsGrid from "@/components/ToolsGrid";
 import { Button } from "@/components/ui/button";
 import { Instagram, Twitter, Linkedin, Mail, Phone } from "lucide-react";
 import placeholderImage from '/placeholder.svg';
@@ -151,6 +152,14 @@ const Index = () => {
           >
             Read More
           </Button>
+        </section>
+        
+        {/* NEW: Tools I'm Good At Section */}
+        <section 
+          id="tools" 
+          className={`card col-span-1 animate-on-scroll ${getAnimationClass("tools")}`}
+        >
+          <ToolsGrid />
         </section>
         
         {/* Projects */}
