@@ -63,7 +63,7 @@ const ToolsGrid = () => {
       color: "bg-pink-200 dark:bg-pink-900"
     },
     { 
-      name: "Photography", 
+      name: "Camera", 
       icon: <Camera size={24} />,
       color: "bg-gray-200 dark:bg-gray-800"
     }
