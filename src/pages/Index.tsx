@@ -5,7 +5,7 @@ import ParticleBackground from "@/components/ParticleBackground";
 import FlowerIcon from "@/components/FlowerIcon";
 import TypingEffect from "@/components/TypingEffect";
 import AboutMeModal from "@/components/AboutMeModal";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCarousel from "@/components/ProjectCarousel";
 import { Button } from "@/components/ui/button";
 import { Instagram, Twitter, Linkedin, Mail, Phone } from "lucide-react";
 import placeholderImage from '/placeholder.svg';
@@ -66,6 +66,37 @@ const Index = () => {
         return "animate-fade-in-up";
     }
   };
+  
+  const projects = [
+    {
+      id: 1,
+      title: "Project One",
+      description: "Brief description of Project One.",
+      imageSrc: placeholderImage,
+      detailedDescription: "Project One is a comprehensive web application designed to solve complex problems with an elegant user interface. It leverages modern technologies and design principles to deliver a seamless experience. The project demonstrates advanced functionality, responsive design, and attention to detail."
+    },
+    {
+      id: 2,
+      title: "Project Two",
+      description: "Brief description of Project Two.",
+      imageSrc: placeholderImage,
+      detailedDescription: "Project Two represents an innovative approach to content management, featuring custom animations, real-time data visualization, and cross-platform compatibility. This project showcases advanced frontend techniques and optimization strategies for maximum performance."
+    },
+    {
+      id: 3,
+      title: "Project Three",
+      description: "Brief description of Project Three.",
+      imageSrc: placeholderImage,
+      detailedDescription: "Project Three is an experimental design concept that pushes the boundaries of traditional web interfaces. It combines unique visual elements with practical functionality to create an engaging user experience that stands out."
+    },
+    {
+      id: 4,
+      title: "Project Four",
+      description: "Brief description of Project Four.",
+      imageSrc: placeholderImage,
+      detailedDescription: "Project Four focuses on accessibility and inclusive design while maintaining visual appeal. This project demonstrates how beautiful interfaces can be built with universal access in mind, ensuring everyone can benefit from the application."
+    }
+  ];
   
   return (
     <>
@@ -128,18 +159,7 @@ const Index = () => {
           className={`card col-span-1 md:col-span-2 animate-on-scroll ${getAnimationClass("projects")}`}
         >
           <h2 className="text-2xl font-playfair font-bold mb-6">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <ProjectCard
-              title="Project One"
-              description="Brief description of Project One."
-              imageSrc={placeholderImage}
-            />
-            <ProjectCard
-              title="Project Two"
-              description="Brief description of Project Two."
-              imageSrc={placeholderImage}
-            />
-          </div>
+          <ProjectCarousel projects={projects} autoSlideInterval={5000} />
         </section>
         
         {/* Skills */}
