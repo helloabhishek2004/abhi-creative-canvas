@@ -96,3 +96,20 @@
     @apply w-full;
   }
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.badge-base iframe {
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.badge-base iframe::-webkit-scrollbar {
+  display: none !important;
+}

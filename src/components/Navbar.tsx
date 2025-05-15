@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
@@ -28,16 +27,26 @@ const Navbar = () => {
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 px-8 py-6 transition-all duration-300 ${
-        scrolled ? "py-4 bg-opacity-90" : "py-6"
-      }`}
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 px-8 py-6 transition-all duration-300 ${scrolled ? "py-4 bg-opacity-90" : "py-6"
+        }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-8 py-4">
         <h2 className="font-playfair text-3xl font-bold">ABHISHEK</h2>
-        
+
         <nav className="hidden md:block">
           <ul className="flex gap-6">
+            <li>
+              <a
+                className="nav-link"
+                href="https://drive.google.com/uc?export=download&id=18wUWSDZe-wd5RT6omiBlkbMAKjP5UyKl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume
+              </a>
+            </li>
+
             <li>
               <button onClick={() => scrollToSection("about")} className="nav-link">
                 About
@@ -60,7 +69,7 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-        
+
         <button
           onClick={toggleTheme}
           className="p-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-transform active:scale-90"
