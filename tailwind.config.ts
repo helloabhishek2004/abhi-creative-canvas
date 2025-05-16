@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -57,7 +56,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom colors based on the provided design
+				// Custom light theme colors
 				'primary-light': '#F5F7EE',
 				'secondary-light': '#E8EDDA',
 				'tertiary-light': '#D4DDB9',
@@ -67,7 +66,7 @@ export default {
 				'text-secondary-light': '#40593D',
 				'accent-blue-light': '#40593D',
 				'accent-purple-light': '#617B5A',
-				// Dark mode colors
+				// Custom dark theme colors
 				'primary-dark': '#1B2211',
 				'secondary-dark': '#283618',
 				'tertiary-dark': '#3A4A2A',
@@ -97,6 +96,10 @@ export default {
 					from: { opacity: '0', transform: 'translateY(30px)' },
 					to: { opacity: '1', transform: 'translateY(0)' }
 				},
+				'fade-out-down': {
+					from: { opacity: '1', transform: 'translateY(0)' },
+					to: { opacity: '0', transform: 'translateY(30px)' }
+				},
 				'fade-in-left': {
 					from: { opacity: '0', transform: 'translateX(-30px)' },
 					to: { opacity: '1', transform: 'translateX(0)' }
@@ -104,6 +107,14 @@ export default {
 				'fade-in-right': {
 					from: { opacity: '0', transform: 'translateX(30px)' },
 					to: { opacity: '1', transform: 'translateX(0)' }
+				},
+				'slideInFromRight': {
+					from: { right: '-100%', transform: 'translateY(-50%)', opacity: '0' },
+					to: { right: '50%', transform: 'translate(50%, -50%)', opacity: '1' }
+				},
+				'slideOutToRight': {
+					from: { right: '50%', transform: 'translate(50%, -50%)', opacity: '1' },
+					to: { right: '-100%', transform: 'translateY(-50%)', opacity: '0' }
 				},
 				'zoom-in': {
 					from: { opacity: '0', transform: 'scale(0.9)' },
@@ -127,8 +138,11 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
+				'fade-out-down': 'fade-out-down 0.4s ease-in forwards',
 				'fade-in-left': 'fade-in-left 0.6s ease-out forwards',
 				'fade-in-right': 'fade-in-right 0.6s ease-out forwards',
+				'slideInFromRight': 'slideInFromRight 0.6s ease-out forwards',
+				'slideOutToRight': 'slideOutToRight 0.6s ease-in forwards',
 				'zoom-in': 'zoom-in 0.6s ease-out forwards',
 				'flip-in': 'flip-in 0.6s ease-out forwards',
 				'petal-animation': 'petal-animation 6s infinite alternate ease-in-out',

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
+import { X } from "lucide-react";
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -34,9 +35,17 @@ const ProjectCard = ({ title, description, imageSrc, className, detailedDescript
       </div>
 
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="sm:max-w-3xl max-w-[95vw] max-h-[90vh] overflow-y-auto bg-secondary-light dark:bg-secondary-dark border border-tertiary-light dark:border-tertiary-dark">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-playfair">{title}</DialogTitle>
+            <div className="flex items-center justify-between">
+              <DialogTitle className="text-2xl font-playfair">{title}</DialogTitle>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark text-xl transition-all hover:rotate-90"
+              >
+                <X />
+              </button>
+            </div>
           </DialogHeader>
           <div className="overflow-hidden rounded-lg mb-6">
             <img src={imageSrc} alt={title} className="w-full h-80 object-cover" />

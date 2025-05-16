@@ -113,3 +113,150 @@
 .badge-base iframe::-webkit-scrollbar {
   display: none !important;
 }
+
+@keyframes jiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+.jiggle {
+  animation: jiggle 0.3s ease-in-out infinite;
+}
+.badge-base iframe {
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.badge-base iframe::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Side Navbar Styles */
+.side-navbar {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Initially off-screen */
+  width: 250px;
+  height: 100vh;
+  background-color: var(--secondary); /* Use your theme color variables */
+  color: var(--secondary-foreground);
+  transition: right 0.3s ease-in-out;
+  z-index: 10000; /* Higher than other content, lower than overlay */
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.side-navbar.open {
+  right: 0; /* Slide into view */
+}
+
+.side-navbar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 9999; /* Lower than side navbar */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.side-navbar-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+.badge-base iframe {
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.badge-base iframe::-webkit-scrollbar {
+  display: none !important;
+}
+
+@keyframes jiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+.jiggle {
+  animation: jiggle 0.3s ease-in-out infinite;
+}
+.badge-base iframe {
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.badge-base iframe::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Side Nav (Mobile Only) Styles */
+.side-nav {
+  position: fixed;
+  right: -100%; /* Initially off-screen to the right */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80%;
+  border-radius: 30px;
+  height: 70%;
+  transition: right 0.5s ease-in-out, transform 0.5s ease-in-out; /* Add transition for right and transform */
+}
+
+.side-nav.open {
+  animation: slideInFromRight 0.6s ease-out forwards;
+}
+
+@keyframes slideInFromRight {
+  from {
+    right: -100%;
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    right: 50%;
+    transform: translate(50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideOutToRight {
+  from {
+    right: 50%;
+    transform: translate(50%, -50%);
+    opacity: 1;
+  }
+  to {
+    right: -100%;
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}

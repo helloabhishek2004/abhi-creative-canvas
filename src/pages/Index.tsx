@@ -303,7 +303,7 @@ const Index = () => {
               className="flex items-center gap-3 hover:translate-x-1 transition-transform"
             >
               <Mail size={20} />
-              <span>abhishek@example.com</span>
+              <span>abhishekdq2004@gmail.com</span>
             </a>
             <a
               href="https://wa.me/9048825515"
@@ -332,7 +332,7 @@ const Index = () => {
               <span>WhatsApp</span>
             </a>
             <a
-              href="tel:+919999999999"
+              href="tel:+91 9048825515"
               className="flex items-center gap-3 hover:translate-x-1 transition-transform"
             >
               <Phone size={20} />
